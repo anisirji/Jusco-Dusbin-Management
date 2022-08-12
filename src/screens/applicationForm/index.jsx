@@ -1,6 +1,6 @@
 import React,{useState, useRef} from 'react'
 import { styles } from './styles';
-import Iframe from 'react-iframe';
+// import Iframe from 'react-iframe';
 
 import OtpPopup from './components/otpPopup';
 import Paper from '@mui/material/Paper';
@@ -8,23 +8,23 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from "@mui/material/Typography";
 import TextField from '@mui/material/TextField';
-import OutlinedInput from '@mui/material/OutlinedInput';
+// import OutlinedInput from '@mui/material/OutlinedInput';
 import InputLabel from '@mui/material/InputLabel';
-import InputAdornment from '@mui/material/InputAdornment';
+// import InputAdornment from '@mui/material/InputAdornment';
 import FormControl from '@mui/material/FormControl';
-import Visibility from '@mui/icons-material/Visibility';
-import VisibilityOff from '@mui/icons-material/VisibilityOff';
+// import Visibility from '@mui/icons-material/Visibility';
+// import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import IconButton from '@mui/material/IconButton';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
+// import Radio from '@mui/material/Radio';
+// import RadioGroup from '@mui/material/RadioGroup';
 import FormGroup from '@mui/material/FormGroup';
 import Checkbox from '@mui/material/Checkbox';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import { FormLabel } from '@mui/material';
+// import { FormLabel } from '@mui/material';
 
 export default function ApplicationForm() {
 
@@ -32,9 +32,9 @@ export default function ApplicationForm() {
 
   const [creds, setCreds] = useState({salutation:"", undefined:"",Fname: '',Lname:"",mobile:"",email:"",designation:"",gstin:"", password: '',nameBa:"",streetHouseNoBa:"",regionBa:"",postalCodeBa:"",cityBa:"",countryBa:"",areaBa:"" });
 
-  const [showPassword, setShowPassword] = useState(false)
+  // const [showPassword, setShowPassword] = useState(false)
 
-  const [check, setCheck] = useState("yes")
+  // const [check, setCheck] = useState("yes")
 
   const handleChange = (key) => {
     key.preventDefault();
@@ -59,9 +59,9 @@ export default function ApplicationForm() {
   }
 
 
-  const handleClickShowPassword = () => {
-    setShowPassword(!showPassword)
-  };
+  // const handleClickShowPassword = () => {
+  //   setShowPassword(!showPassword)
+  // };
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -484,7 +484,7 @@ export default function ApplicationForm() {
               <FormControlLabel control={<Checkbox 
               onChange={()=>
               {
-                if(btn==true){
+                if(btn===true){
                   setBtn(false)
                   }
                 else{
