@@ -93,10 +93,5 @@ export const styles = {
         justifyContent:"center",
         alignItems:"center",
         mt:"10px"
-    },
-    adminBtn:{
-        position:"absolute",
-        right:"30px",
-        top:"10px"
-    },
+    }
   };

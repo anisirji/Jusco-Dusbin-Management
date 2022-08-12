@@ -17,7 +17,7 @@ import IconButton from '@mui/material/IconButton';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 
-export default function Login() {
+export default function AdminLogin() {
 
   const [creds, setCreds] = useState({ username: '', password: '' });
   const [showPassword, setShowPassword] = useState(false)
@@ -42,7 +42,6 @@ export default function Login() {
 
   return (
     <>
-     <Button onClick={()=>{navigate("/adminLogin")}} sx={styles.adminBtn} variant="text">Admin</Button>
         <Container maxWidth="xl" sx={styles.container}>
           <Paper sx={styles.paper} variant="outlined" >
             <img  style={mediaQuery.matches?styles.imgLogoMobile:styles.imgLogo} src={require('../../assets/image/logo.png')} alt="" srcset="" />
@@ -52,7 +51,7 @@ export default function Login() {
             </Typography>
             <Typography
                 sx={styles.loginText} >
-                Log in to continue.
+                Administration's Login
             </Typography>
             <TextField
           id="username"
@@ -88,7 +87,7 @@ export default function Login() {
         <Button 
         variant="contained" 
         sx={styles.loginBtn} 
-        onClick={()=>{navigate("/customerDashboard")}}
+        onClick={()=>{navigate("/depoManagerDashboard")}}
         >Log in
         </Button>
         <Divider sx={styles.divider}/>
@@ -96,18 +95,6 @@ export default function Login() {
                 sx={styles.forgotPwdText} >
                 Forgot your password? 
             </Typography>
-            <Box sx={styles.flex}>
-              <Typography
-                onClick={()=>{navigate("/application")}}
-                  sx={styles.signupText} >
-                  Don't have an account? 
-              </Typography>
-              <Typography
-                onClick={()=>{navigate("/application")}}
-                  sx={styles.signupBtn} >
-                  Signup here 
-              </Typography>
-            </Box>
           </Paper>
         </Container>
 
