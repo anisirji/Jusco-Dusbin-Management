@@ -4,12 +4,11 @@ import { styles } from "./styles";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
-// import Stepper from "@mui/material/Stepper";
-// import Step from "@mui/material/Step";
-// import StepLabel from "@mui/material/StepLabel";
+import Stepper from "@mui/material/Stepper";
+import Step from "@mui/material/Step";
+import StepLabel from "@mui/material/StepLabel";
 import Button from "@mui/material/Button";
-
-
+import Paper from "@mui/material/Paper";
 
 const steps = [
   "New Application",
@@ -78,7 +77,7 @@ export default function CustomerDashboard() {
           srcset=""
         />
         <Typography sx={styles.head}>Bulk Generation System</Typography>
-        <Typography sx={styles.dashboardText}>Dashboard</Typography>
+        <Typography sx={styles.dashboardText}>Application Details</Typography>
 
         {/* <Box sx={styles.stepper}>
           <Stepper
@@ -101,129 +100,132 @@ export default function CustomerDashboard() {
           </Stepper>
         </Box>
          */}
-<Box sx={styles.row}>
-          <div>
-          <Typography sx={styles.dashboardText}></Typography>
-        <Box sx={styles.detailsRow}>
-          <Typography sx={styles.field}>Application Status</Typography>
-          <Typography sx={styles.fieldData}>Pending</Typography>
-        </Box>
+        <Paper variant="outlined" sx={styles.fieldContainer}>
+          <Box sx={styles.row}>
+            <div>
+              <Typography sx={styles.dashboardText}></Typography>
+              <Box sx={styles.detailsRow}>
+                <Typography sx={styles.field}>Application No.</Typography>
+                <Typography sx={styles.fieldData}>
+                  TSUIL/BULK/APPL/2022-23/0073
+                </Typography>
+              </Box>
+            </div>
+            <div>
+              <Typography sx={styles.dashboardText}></Typography>
+              <Box sx={styles.detailsRow}>
+                <Typography sx={styles.field}>Application Status</Typography>
+                <Typography sx={styles.fieldData}>Pending</Typography>
+              </Box>
+            </div>
+          </Box>
+        </Paper>
 
-       
-
-        
-        </div>
-        <div>
-          <Typography sx={styles.dashboardText}></Typography>
-        <Box sx={styles.detailsRow}>
-          <Typography sx={styles.field}></Typography>
-          <Typography sx={styles.fieldData}></Typography>
-        </Box>
-        </div>
-        </Box>
-
-        <Box sx={styles.row}>
-          
-        <div>
-        <Typography sx={styles.dashboardText}>Personal Info</Typography>
-        <Box sx={styles.detailsRow}>
-          <Typography sx={styles.field}>Name</Typography>
-          <Typography sx={styles.fieldData}>Mr. Rohit Kumar</Typography>
-        </Box>
-
-        <Box sx={styles.detailsRow}>
-          <Typography sx={styles.field}>Mobile Number</Typography>
-          <Typography sx={styles.fieldData}>9876543210</Typography>
-        </Box>
-
-        <Box sx={styles.detailsRow}>
-          <Typography sx={styles.field}>Email</Typography>
-          <Typography sx={styles.fieldData}>rohitkumar@mail.com</Typography>
-        </Box>
-
-        <Box sx={styles.detailsRow}>
-          <Typography sx={styles.field}>Designation</Typography>
-          <Typography sx={styles.fieldData}>Sr. Manager</Typography>
-        </Box>
-        </div>
-        <div>
-        <Typography sx={styles.dashboardText}>Document Details</Typography>
-        <Box sx={styles.detailsRow}>
-          <Typography sx={styles.field}>GSTIN</Typography>
-          <Typography sx={styles.fieldData}>20ABCD890J1KZW</Typography>
-        </Box>
-        <Button variant="text">view uploaded document</Button>
-        </div>
-
-        </Box>
+        <Paper variant="outlined" sx={styles.fieldContainer}>
         <Box sx={styles.row}>
           <div>
-        <Typography sx={styles.dashboardText}>Billing Address</Typography>
-        <Box sx={styles.detailsRow}>
-          <Typography sx={styles.field}>Name</Typography>
-          <Typography sx={styles.fieldData}>Mr. Rohit Kumar</Typography>
-        </Box>
+            <Typography sx={styles.dashboardText}>Personal Info</Typography>
+            <Box sx={styles.detailsRow}>
+              <Typography sx={styles.field}>Name</Typography>
+              <Typography sx={styles.fieldData}>Mr. Rohit Kumar</Typography>
+            </Box>
 
-        <Box sx={styles.detailsRow}>
-          <Typography sx={styles.field}>Street/ House No.</Typography>
-          <Typography sx={styles.fieldData}>L-Road, Bistupur</Typography>
-        </Box>
+            <Box sx={styles.detailsRow}>
+              <Typography sx={styles.field}>Mobile Number</Typography>
+              <Typography sx={styles.fieldData}>9876543210</Typography>
+            </Box>
 
-        <Box sx={styles.detailsRow}>
-          <Typography sx={styles.field}>City</Typography>
-          <Typography sx={styles.fieldData}>Jamshedpur</Typography>
-        </Box>
+            <Box sx={styles.detailsRow}>
+              <Typography sx={styles.field}>Email</Typography>
+              <Typography sx={styles.fieldData}>rohitkumar@mail.com</Typography>
+            </Box>
 
-        <Box sx={styles.detailsRow}>
-          <Typography sx={styles.field}>Region</Typography>
-          <Typography sx={styles.fieldData}>Jharkhand</Typography>
+            <Box sx={styles.detailsRow}>
+              <Typography sx={styles.field}>Designation</Typography>
+              <Typography sx={styles.fieldData}>Sr. Manager</Typography>
+            </Box>
+          </div>
+          <div>
+            <Typography sx={styles.dashboardText}>Document Details</Typography>
+            <Box sx={styles.detailsRow}>
+              <Typography sx={styles.field}>GSTIN</Typography>
+              <Typography sx={styles.fieldData}>20ABCD890J1KZW</Typography>
+            </Box>
+            <Button variant="contained">view uploaded document</Button>
+          </div>
         </Box>
+        </Paper>
 
-        <Box sx={styles.detailsRow}>
-          <Typography sx={styles.field}>Country</Typography>
-          <Typography sx={styles.fieldData}>India</Typography>
-        </Box>
-        <Box sx={styles.detailsRow}>
-          <Typography sx={styles.field}>Postal Code</Typography>
-          <Typography sx={styles.fieldData}>831001</Typography>
-        </Box>
-        </div>
+        <Paper variant="outlined" sx={styles.fieldContainer}>
+        <Box sx={styles.row}>
+          <div>
+            <Typography sx={styles.dashboardText}>Billing Address</Typography>
+            <Box sx={styles.detailsRow}>
+              <Typography sx={styles.field}>Establishment Name</Typography>
+              <Typography sx={styles.fieldData}>Mr. Rohit Kumar</Typography>
+            </Box>
 
-        <div>
-        <Typography sx={styles.dashboardText}>Pickup Address</Typography>
-        <Box sx={styles.detailsRow}>
-          <Typography sx={styles.field}>Name</Typography>
-          <Typography sx={styles.fieldData}>Mr. Rohit Kumar</Typography>
-        </Box>
+            <Box sx={styles.detailsRow}>
+              <Typography sx={styles.field}>Street/ House No.</Typography>
+              <Typography sx={styles.fieldData}>L-Road, Bistupur</Typography>
+            </Box>
 
-        <Box sx={styles.detailsRow}>
-          <Typography sx={styles.field}>Street/ House No.</Typography>
-          <Typography sx={styles.fieldData}>L-Road, Bistupur</Typography>
-        </Box>
+            <Box sx={styles.detailsRow}>
+              <Typography sx={styles.field}>City</Typography>
+              <Typography sx={styles.fieldData}>Jamshedpur</Typography>
+            </Box>
 
-        <Box sx={styles.detailsRow}>
-          <Typography sx={styles.field}>City</Typography>
-          <Typography sx={styles.fieldData}>Jamshedpur</Typography>
-        </Box>
+            <Box sx={styles.detailsRow}>
+              <Typography sx={styles.field}>Region</Typography>
+              <Typography sx={styles.fieldData}>Jharkhand</Typography>
+            </Box>
 
-        <Box sx={styles.detailsRow}>
-          <Typography sx={styles.field}>Region</Typography>
-          <Typography sx={styles.fieldData}>Jharkhand</Typography>
-        </Box>
+            <Box sx={styles.detailsRow}>
+              <Typography sx={styles.field}>Country</Typography>
+              <Typography sx={styles.fieldData}>India</Typography>
+            </Box>
+            <Box sx={styles.detailsRow}>
+              <Typography sx={styles.field}>Postal Code</Typography>
+              <Typography sx={styles.fieldData}>831001</Typography>
+            </Box>
+          </div>
 
-        <Box sx={styles.detailsRow}>
-          <Typography sx={styles.field}>Country</Typography>
-          <Typography sx={styles.fieldData}>India</Typography>
-        </Box>
-        <Box sx={styles.detailsRow}>
-          <Typography sx={styles.field}>Postal Code</Typography>
-          <Typography sx={styles.fieldData}>831001</Typography>
-        </Box>
-        </div>
-        </Box>
+          <div>
+            <Typography sx={styles.dashboardText}>
+              Garbage Pickup Address
+            </Typography>
+            <Box sx={styles.detailsRow}>
+              <Typography sx={styles.field}>Establishment Name</Typography>
+              <Typography sx={styles.fieldData}>Mr. Rohit Kumar</Typography>
+            </Box>
 
-        
+            <Box sx={styles.detailsRow}>
+              <Typography sx={styles.field}>Street/ House No.</Typography>
+              <Typography sx={styles.fieldData}>L-Road, Bistupur</Typography>
+            </Box>
 
+            <Box sx={styles.detailsRow}>
+              <Typography sx={styles.field}>City</Typography>
+              <Typography sx={styles.fieldData}>Jamshedpur</Typography>
+            </Box>
+
+            <Box sx={styles.detailsRow}>
+              <Typography sx={styles.field}>Region</Typography>
+              <Typography sx={styles.fieldData}>Jharkhand</Typography>
+            </Box>
+
+            <Box sx={styles.detailsRow}>
+              <Typography sx={styles.field}>Country</Typography>
+              <Typography sx={styles.fieldData}>India</Typography>
+            </Box>
+            <Box sx={styles.detailsRow}>
+              <Typography sx={styles.field}>Postal Code</Typography>
+              <Typography sx={styles.fieldData}>831001</Typography>
+            </Box>
+          </div>
+        </Box>
+        </Paper>
+        <Button variant="contained" onClick={() => window.print()}>Download</Button>
       </Container>
     </>
   );

@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import { styles } from './styles';
 import { useNavigate } from "react-router-dom";
 
-// import Box from '@mui/material/Box';
+import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
 import Typography from "@mui/material/Typography";
@@ -31,10 +31,10 @@ export default function AdminLogin() {
     setShowPassword(!showPassword)
   };
 
-  // const loginHandler = async (e) => {
-  //   e.preventDefault();
+  const loginHandler = async (e) => {
+    e.preventDefault();
     
-  // }
+  }
 
   let navigate = useNavigate();
   

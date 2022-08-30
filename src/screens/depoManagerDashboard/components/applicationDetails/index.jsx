@@ -1,7 +1,7 @@
 import React, { useState,useRef } from "react";
 import { styles } from "./styles";
 import Iframe from 'react-iframe';
-
+import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
@@ -16,7 +16,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import { FormLabel } from '@mui/material';
+import { Checkbox, FormLabel } from '@mui/material';
 
 export default function ApplicationDetails() {
   
@@ -48,8 +48,11 @@ export default function ApplicationDetails() {
           srcset=""
         />
         <Typography sx={styles.head}>Bulk Generation System</Typography>
-        <Typography sx={styles.dashboardText}>Details</Typography>
+        <Typography sx={styles.dashboardText}>Application Details</Typography>
         
+
+
+        <Paper variant="outlined" sx={styles.fieldContainer}>
         <Box sx={styles.row}>
         <div>
         <Typography sx={styles.dashboardText}>Personal Info</Typography>
@@ -80,8 +83,10 @@ export default function ApplicationDetails() {
           <Typography sx={styles.fieldData}>20ABCD890J1KZW</Typography>
         </Box>
         </div>
-
         </Box>
+        </Paper>
+
+        <Paper variant="outlined" sx={styles.fieldContainer}>
         <Box sx={styles.row}>
           <div>
         <Typography sx={styles.dashboardText}>Billing Address</Typography>
@@ -147,8 +152,8 @@ export default function ApplicationDetails() {
         </Box>
         </div>
         </Box>
-
-        <Box sx={styles.row}>
+</Paper>
+        {/* <Box sx={styles.row}>
           <div>
           <Typography sx={styles.dashboardText}></Typography>
         <Box sx={styles.detailsRow}>
@@ -178,7 +183,7 @@ export default function ApplicationDetails() {
           <Typography sx={styles.fieldData}></Typography>
         </Box>
         </div>
-        </Box>
+        </Box> */}
 
 
         <Typography  sx={styles.head2}>Select Location</Typography>
@@ -193,28 +198,34 @@ export default function ApplicationDetails() {
             />
       <Box sx={styles.inputrow}>
                 <TextField
+                InputProps={{
+                  readOnly: true,
+                }}
                 id="Longitude"
                 type="text"
                 label="Longitude"
-                placeholder="22.804565"
-                value={creds.Longitude || ''}
+                value="22.804565"
+              
                 onChange={handleChange}
                 sx={styles.inputField}
             />
            <TextField
+           InputProps={{
+            readOnly: true,
+          }}
                 id="Latitude"
                 type="text"
                 label="Latitude"
-                placeholder="86.202873"
-                value={creds.Latitude || ''}
+                value="86.202873"
+              
                 onChange={handleChange}
                 sx={styles.inputField}
             />
            </Box>
             
+           <Paper variant="outlined" sx={styles.fieldContainer}>
 
-            
-
+<div>
 <FormControl>
   <FormLabel id="Frequency" sx={styles.head2}>Frequency of Collection per day</FormLabel>
   <RadioGroup
@@ -229,7 +240,7 @@ export default function ApplicationDetails() {
     <FormControlLabel value="onCall" control={<Radio />} label="On Call" />
   </RadioGroup>
 </FormControl>
-
+<br/>
 <FormControl>
   <FormLabel id="acknowledgement" sx={styles.head2}>Mode of acknowledgement of pick ups</FormLabel>
   <RadioGroup
@@ -240,10 +251,12 @@ export default function ApplicationDetails() {
     name="mode"
   >
     <FormControlLabel value="QR Code Scanning" control={<Radio />} label="QR Code Scanning" />
-    <FormControlLabel value="Signature on Mobile" control={<Radio />} label="Signature on Mobile" />
+    <FormControlLabel value="Signature on Mobile" control={<Checkbox />} label="Signature on Mobile" />
   </RadioGroup>
 </FormControl>
-
+</div>
+<br/>
+<div>
 <FormControl>
   <FormLabel id="Frequency" sx={styles.head2}>Customer Category </FormLabel>
   <RadioGroup
@@ -258,8 +271,9 @@ export default function ApplicationDetails() {
   </RadioGroup>
 </FormControl>
 
+<br/>
 
-<FormControl>
+{/* <FormControl>
   <FormLabel id="Frequency" sx={styles.head2}>Priority of the customer</FormLabel>
   <RadioGroup
     row
@@ -272,8 +286,8 @@ export default function ApplicationDetails() {
     <FormControlLabel value="MEDIUM" control={<Radio />} label="MEDIUM" />
     <FormControlLabel value="HIGH" control={<Radio />} label="HIGH" />
   </RadioGroup>
-</FormControl>
-
+</FormControl> */}
+<br/>
 <Box sx={styles.inputrow}>
            <FormControl sx={styles.inputField} fullWidth>
         <InputLabel id="Area">Area</InputLabel>
@@ -306,8 +320,9 @@ export default function ApplicationDetails() {
         </Select>
       </FormControl>
       </Box>
+      </div>
 
-
+</Paper>
 <Button 
         variant="contained" 
         sx={styles.submitBtn} 

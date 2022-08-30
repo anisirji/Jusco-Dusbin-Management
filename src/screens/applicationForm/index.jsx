@@ -1,6 +1,6 @@
 import React,{useState, useRef} from 'react'
 import { styles } from './styles';
-// import Iframe from 'react-iframe';
+import Iframe from 'react-iframe';
 
 import OtpPopup from './components/otpPopup';
 import Paper from '@mui/material/Paper';
@@ -8,23 +8,23 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from "@mui/material/Typography";
 import TextField from '@mui/material/TextField';
-// import OutlinedInput from '@mui/material/OutlinedInput';
+import OutlinedInput from '@mui/material/OutlinedInput';
 import InputLabel from '@mui/material/InputLabel';
-// import InputAdornment from '@mui/material/InputAdornment';
+import InputAdornment from '@mui/material/InputAdornment';
 import FormControl from '@mui/material/FormControl';
-// import Visibility from '@mui/icons-material/Visibility';
-// import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import IconButton from '@mui/material/IconButton';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import FormControlLabel from '@mui/material/FormControlLabel';
-// import Radio from '@mui/material/Radio';
-// import RadioGroup from '@mui/material/RadioGroup';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
 import FormGroup from '@mui/material/FormGroup';
 import Checkbox from '@mui/material/Checkbox';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-// import { FormLabel } from '@mui/material';
+import { FormLabel } from '@mui/material';
 
 export default function ApplicationForm() {
 
@@ -32,9 +32,9 @@ export default function ApplicationForm() {
 
   const [creds, setCreds] = useState({salutation:"", undefined:"",Fname: '',Lname:"",mobile:"",email:"",designation:"",gstin:"", password: '',nameBa:"",streetHouseNoBa:"",regionBa:"",postalCodeBa:"",cityBa:"",countryBa:"",areaBa:"" });
 
-  // const [showPassword, setShowPassword] = useState(false)
+  const [showPassword, setShowPassword] = useState(false)
 
-  // const [check, setCheck] = useState("yes")
+  const [check, setCheck] = useState("yes")
 
   const handleChange = (key) => {
     key.preventDefault();
@@ -59,9 +59,9 @@ export default function ApplicationForm() {
   }
 
 
-  // const handleClickShowPassword = () => {
-  //   setShowPassword(!showPassword)
-  // };
+  const handleClickShowPassword = () => {
+    setShowPassword(!showPassword)
+  };
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -81,6 +81,7 @@ export default function ApplicationForm() {
                 sx={styles.head} >
                 Bulk Generation System
             </Typography>
+            <Typography sx={styles.dashboardText}>New Customer Application Form</Typography>
             <Paper variant="outlined" sx = {styles.fieldContainer}>
             <Typography
                 sx={styles.signupText} >
@@ -88,7 +89,7 @@ export default function ApplicationForm() {
             </Typography>
            <Box sx={styles.row}>
             <div style={mediaQuery.matches?styles.flex:styles}>
-                <FormControl sx={styles.inputFieldSm} fullWidth>
+                <FormControl size="small" sx={styles.inputFieldSm} fullWidth>
                   <InputLabel id="salutation">{"salutation"}</InputLabel>
                   <Select
                     labelId="salutation"
@@ -105,6 +106,7 @@ export default function ApplicationForm() {
                   </Select>
                 </FormControl>
                 <TextField
+                          size="small"
                 id="Fname"
                 type="text"
                 label="First Name"
@@ -115,6 +117,7 @@ export default function ApplicationForm() {
             />
             </div>
             <TextField
+                      size="small"
                 id="Lname"
                 type="text"
                 label="Last Name"
@@ -126,6 +129,7 @@ export default function ApplicationForm() {
            </Box>
            <Box sx={styles.row}>
                 <TextField
+                          size="small"
                 id="mobile"
                 type="number"
                 label="Mobile Number"
@@ -134,18 +138,48 @@ export default function ApplicationForm() {
                 onChange={handleChange}
                 sx={styles.inputField}
             />
-            <TextField
+
+              <TextField
+                          size="small"
+                id="mobile"
+                type="number"
+                label="Confirm Mobile Number"
+                placeholder="Confirm Mobile Number"
+                value={creds.mobile || ''}
+                onChange={handleChange}
+                sx={styles.inputField}
+            />
+            
+           </Box>
+
+           <Box sx={styles.row}>
+                <TextField
+                          size="small"
                 id="email"
                 type="email"
-                label="Email Id"
-                placeholder="Email Id"
+                label="email id"
+                placeholder="email id"
                 value={creds.email || ''}
                 onChange={handleChange}
                 sx={styles.inputField}
             />
+
+              <TextField
+                          size="small"
+                id="email"
+                type="id"
+                label="Confirm email id"
+                placeholder="Confirm email id"
+                value={creds.email || ''}
+                onChange={handleChange}
+                sx={styles.inputField}
+            />
+            
            </Box>
+
            <Box sx={styles.row}>
                 <TextField
+                          size="small"
                 id="designation"
                 type="text"
                 label="Designation"
@@ -177,20 +211,19 @@ export default function ApplicationForm() {
                Documents Details
             </Typography>
             <Box sx={styles.row}>
-              <FormControl sx={styles.inputField} fullWidth>
+              <FormControl size="small" sx={styles.inputField} fullWidth>
             <InputLabel id="Document">{"Documet Type"}</InputLabel>
             <Select
               labelId="Document"
               id="Document"
               value={creds.undefined || ""}
-              label="Area"
+              label="Documet Type"
               onChange={handleChange}
             >
-              <MenuItem value={"RD"}>Aadhar Card</MenuItem>
-              <MenuItem value={"KSD"}>Pan Card</MenuItem>
-              <MenuItem value={"NT"}>Voter Id Card</MenuItem>
-              <MenuItem value={"BRD"}>Ration Card</MenuItem>
-              <MenuItem value={"BRM"}>Others</MenuItem>
+              <MenuItem value={"RD"}>GSTIN</MenuItem>
+              <MenuItem value={"KSD"}>Trade License</MenuItem>
+              <MenuItem value={"NT"}>Electricity Bill</MenuItem>
+              <MenuItem value={"BRD"}>Aadhaar</MenuItem>
             </Select>
           </FormControl>
           <Box sx={styles.inputField}></Box>
@@ -198,10 +231,11 @@ export default function ApplicationForm() {
             <Box sx={styles.row}>
            
            <TextField
+                    size="small"
                     id="gstin"
                     type="number"
-                    label="Document Detail"
-                    placeholder="Document Detail"
+                    label="Document No."
+                    placeholder="Document No."
                     value={creds.gstin || ''}
                     onChange={handleChange}
                     sx={styles.inputField}
@@ -225,15 +259,17 @@ export default function ApplicationForm() {
             </Typography>
            <Box sx={styles.row}>
            <TextField
+                    size="small"
                 id="nameBa"
                 type="text"
-                label="Name"
-                placeholder="Name"
+                label="Establishment Name"
+                placeholder="Establishment Name"
                 value={creds.nameBa || ''}
                 onChange={handleChange}
                 sx={styles.inputField}
             />
                 <TextField
+                          size="small"
                 id="streetHouseNoBa"
                 type="text"
                 label="Street/House Number"
@@ -245,7 +281,7 @@ export default function ApplicationForm() {
             
            </Box>
            <Box sx={styles.row}>
-              <FormControl sx={styles.inputField} fullWidth>
+              <FormControl size="small" sx={styles.inputField} fullWidth>
             <InputLabel id="areaBa">{"Area"}</InputLabel>
             <Select
               labelId="areaBa"
@@ -261,10 +297,8 @@ export default function ApplicationForm() {
               <MenuItem value={"BRM"}>Burmamines</MenuItem>
             </Select>
           </FormControl>
-          <Box sx={styles.inputField}></Box>
-           </Box>
-           <Box sx={styles.row}>
-           <TextField
+          <TextField
+                    size="small"
                 id="postalCodeBa"
                 type="number"
                 label="Postal Code"
@@ -273,7 +307,11 @@ export default function ApplicationForm() {
                 onChange={handleChange}
                 sx={styles.inputField}
             />
+           </Box>
+           <Box sx={styles.row}>
+           
            <TextField
+                    size="small"
                 id="cityBa"
                 type="text"
                 label="City"
@@ -282,10 +320,8 @@ export default function ApplicationForm() {
                 onChange={handleChange}
                 sx={styles.inputFieldRO}
             />
-           </Box>
-           
-           <Box sx={styles.row}>
-              <TextField
+            <TextField
+                      size="small"
                     id="Region"
                     type="text"
                     label="Region"
@@ -294,8 +330,13 @@ export default function ApplicationForm() {
                     onChange={handleChange}
                     sx={styles.inputFieldRO}
                 />
+           </Box>
+           
+           <Box sx={styles.row}>
+              
                 
             <TextField
+                      size="small"
                 id="countryBa"
                 type="text"
                 label="Country"
@@ -304,6 +345,7 @@ export default function ApplicationForm() {
                 onChange={handleChange}
                 sx={styles.inputFieldRO}
             />
+            <Box sx={styles.inputField}></Box>
            </Box>
            
           
@@ -330,10 +372,11 @@ export default function ApplicationForm() {
 
            <Box sx={styles.row}>
            <TextField
+                    size="small"
                 id="namePa"
                 type="text"
-                label="Name"
-                placeholder="Name"
+                label="Establishment Name"
+                placeholder="Establishment Name"
                 value={val.namePa || ''}
                 onChange={handleChange}
                 sx={styles.inputField}
@@ -341,6 +384,7 @@ export default function ApplicationForm() {
 
 
                 <TextField
+                          size="small"
                 id="streetHouseNoPa"
                 type="text"
                 label="Street/House Number"
@@ -355,7 +399,7 @@ export default function ApplicationForm() {
 
 
            <Box sx={styles.row}>
-           <FormControl sx={styles.inputField} fullWidth>
+           <FormControl size="small" sx={styles.inputField} fullWidth>
         <InputLabel id="Area">area</InputLabel>
         <Select
           labelId="Area"
@@ -371,13 +415,8 @@ export default function ApplicationForm() {
           <MenuItem value={"BRM"}>Burmamines</MenuItem>
         </Select>
       </FormControl>
-      <Box sx={styles.inputField}></Box>
-           </Box>
-
-
-
-           <Box sx={styles.row}>
-           <TextField
+      <TextField
+                size="small"
                 id="postalCodePa"
                 type="number"
                 label="Postal Code"
@@ -386,7 +425,14 @@ export default function ApplicationForm() {
                 onChange={handleChange}
                 sx={styles.inputField}
             />
+           </Box>
+
+
+
+           <Box sx={styles.row}>
+           
                 <TextField
+                          size="small"
                 id="cityPa"
                 type="text"
                 label="City"
@@ -395,10 +441,8 @@ export default function ApplicationForm() {
                 onChange={handleChange}
                 sx={styles.inputFieldRO}
             />
-           
-           </Box>
-           <Box sx={styles.row}>
            <TextField
+                    size="small"
                 id="regionPa"
                 type="text"
                 label="Region"
@@ -407,7 +451,11 @@ export default function ApplicationForm() {
                 onChange={handleChange}
                 sx={styles.inputFieldRO}
             />
+           </Box>
+           <Box sx={styles.row}>
+           
              <TextField
+                      size="small"
                 id="country"
                 type="text"
                 label="Country"
@@ -416,11 +464,13 @@ export default function ApplicationForm() {
                 onChange={handleChange}
                 sx={styles.inputFieldRO}
             />
+            <Box sx={styles.inputField}></Box>
            </Box>
           
            </Paper>
            {/* <Box sx={styles.row}>
                 <TextField
+                          size="small"
                 id="Longitude"
                 type="text"
                 label="Longitude"
@@ -430,6 +480,7 @@ export default function ApplicationForm() {
                 sx={styles.inputField}
             />
            <TextField
+                    size="small"
                 id="Latitude"
                 type="text"
                 label="Latitude"
@@ -479,12 +530,12 @@ export default function ApplicationForm() {
     <FormControlLabel value="Signature on Mobile" control={<Radio />} label="Signature on Mobile" />
   </RadioGroup>
 </FormControl> */}
-
-<FormGroup>
+      <div style={{display:"flex",justifyContent:"start",width:"70%"}}>
+          <FormGroup>
               <FormControlLabel control={<Checkbox 
               onChange={()=>
               {
-                if(btn===true){
+                if(btn==true){
                   setBtn(false)
                   }
                 else{
@@ -495,6 +546,7 @@ export default function ApplicationForm() {
 
               label="Terms and Conditions" />
             </FormGroup>
+          </div>
         <Button 
         variant="contained" 
         sx={styles.submitBtn} 

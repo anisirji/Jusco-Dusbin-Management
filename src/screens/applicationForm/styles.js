@@ -4,7 +4,6 @@ export const styles = {
         flexDirection:"column",
         alignItems:"center",
         justifyContent:"center",
-        background:"white",
         py:"20px",
         position:"relative",
         background:"#F0F2F7"
@@ -25,6 +24,14 @@ export const styles = {
         '@media (max-width: 650px)': {
             fontSize:"28px",
           },
+    },
+    dashboardText:{
+        fontFamily: "'Open Sans', sans-serif",
+        fontSize:"22px",
+        color:"#5D5D5D",
+        mb:"15px",
+        mt:"30px",
+        alignSelf:"center",
     },
     inputField:{
         width:"500px",
@@ -138,7 +145,7 @@ export const styles = {
     },
     fieldContainer:{
         margin:"10px",
-        padding:"10px"
+        padding:"10px",
     },
     info:{
         color:"#7B1FA2",
